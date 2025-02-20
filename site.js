@@ -43,6 +43,8 @@ instructorSection.addEventListener('mousemove', e => {
 		const div = document.querySelector(`#${instructor}`)
 		if (!div) return
 
+		const img = instructorSection.querySelector(`#${instructor} img`)
+		
 		const hover = hasHoverState(div)
 		if (hover) {
 			const image = images.default
@@ -51,7 +53,6 @@ instructorSection.addEventListener('mousemove', e => {
 			return
 		}
 
-		const img = instructorSection.querySelector(`#${instructor} img`)
 		const offsetX = x - img.offsetLeft - halfImageSize.width
 		const offsetY = y - img.offsetTop - halfImageSize.height
 		const angle = Math.atan2(offsetY, offsetX)
