@@ -35,10 +35,12 @@ const angleToImageIndex = angle => {
 
 const hasHoverState = e => e.parentElement.querySelector(':hover') === e
 
+
 instructorSection.addEventListener('mousemove', e => {
 	const x = e.clientX
 	const y = e.clientY
 
+	let hovering = false
 	Object.entries(instructorImages).forEach(([instructor, images]) => {
 		// check if instructor has hover state
 		const div = document.querySelector(`#${instructor}`)
@@ -48,6 +50,7 @@ instructorSection.addEventListener('mousemove', e => {
 
 		const hover = hasHoverState(div)
 		if (hover) {
+			hovering = true
 			const image = images.default
 			img.src = image.src
 			img.classList.add('hover')
@@ -70,4 +73,10 @@ instructorSection.addEventListener('mousemove', e => {
 		img.classList.remove('hover')
 
 	})
+})
+
+instructorSection.addEventListener('mouseleave', e => {
+	document.documentElement.style.setProperty('--instructor-bg-hue', '0')
+	instructorNameDiv.innerText = 'Select an Instructor'
+	instructorDescriptionDiv.innerText = 'Hover over an instructor to learn more.'
 })
