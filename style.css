@@ -6,13 +6,16 @@ body {
 }
 
 #instructors {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	display: grid;
 	padding: 50px;
 	margin-top: 10vh;
 	background-color: #818181;
 	min-height: 60vh;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 20px;
+	justify-items: center;
+	align-items: center;
 }
 
 #instructors div {

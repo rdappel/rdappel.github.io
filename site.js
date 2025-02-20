@@ -9,22 +9,22 @@ const halfImageSize = {
 	height: imageSize.height / 2
 }
 
+const instructorSection = document.querySelector('#instructors')
+const instructorDivs = instructorSection.querySelectorAll('.instructor')
+const instructorIds = [ ...instructorDivs ].map(e => e.id)
+console.log(instructorIds)
 
-const instructorImages = [
-	'appel'
-].reduce((acc, instructor) => {
+const instructorImages = instructorIds.reduce((acc, instructor) => {
 	const names = [ '0', '1', '2', '3', '4', '5', '6', '7', 'default' ]
 	const images = names.reduce((acc, name) => {
 		const img = new Image()
-		img.src = `images/${instructor}/${instructor}_${name}.png`
+		img.src = `images/${instructor}/hs_${name}.png`
 		acc[name] = img
 		return acc
 	}, { })
 	acc[instructor] = images
 	return acc
 }, { })
-
-
 
 const angleToImageIndex = angle => {
     // Add π to make the range [0, 2π] and shift left by π/8 to center bins
@@ -33,7 +33,6 @@ const angleToImageIndex = angle => {
 
 const hasHoverState = e => e.parentElement.querySelector(':hover') === e
 
-const instructorSection = document.querySelector('#instructors')
 instructorSection.addEventListener('mousemove', e => {
 	const x = e.clientX
 	const y = e.clientY
@@ -44,7 +43,7 @@ instructorSection.addEventListener('mousemove', e => {
 		if (!div) return
 
 		const img = instructorSection.querySelector(`#${instructor} img`)
-		
+
 		const hover = hasHoverState(div)
 		if (hover) {
 			const image = images.default
