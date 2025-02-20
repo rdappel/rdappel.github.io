@@ -22,7 +22,6 @@ body {
 	margin: 20px;
 	padding: 0px;
 	border-radius: 5px;
-	background-color: #8d8d8d;
 	width: 180px;
 	height: 180px;
 	display: flex;
@@ -32,8 +31,9 @@ body {
 	justify-content: flex-end;
 	border-radius: 50%;
 	overflow: hidden;
-	transition: all 0.3s ease;
-	border: 0px solid #fff;
+	transition: all 0.4s ease;
+	border: 1px solid #fff;
+	background: linear-gradient(to bottom, #8d8d8d, #444444);
 }
 
 #instructors div img {
@@ -41,7 +41,10 @@ body {
 	height: 100%;
 	object-fit: cover;
 	filter: grayscale(100%);
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
+	/* define bg color variable */
+	--instructor-bg-color: #8d8d8d;
+	background: linear-gradient(to bottom, var(--instructor-bg-color), #000);
 }
 
 #instructors div:has(img:hover) {
@@ -55,36 +58,36 @@ body {
 	cursor: pointer;
 }
 
-#instructors #appel:has(img:hover) {
-	background-color: #46bea4;
+#appel:has(img:hover) img {
+	--instructor-bg-color: #be4646;
 }
 
-#instructors #wetzel:has(img:hover) {
-	background-color: #beac46;
+#wetzel:has(img:hover) img {
+	--instructor-bg-color: #be9446;
 }
 
-#instructors #sumner:has(img:hover) {
-	background-color: #9c46be;
+#sumner:has(img:hover) img {
+	--instructor-bg-color: #beb646;
 }
 
-#instructors #foote:has(img:hover) {
-	background-color: #4692be;
+#foote:has(img:hover) img {
+	--instructor-bg-color: #7cbe46;
 }
 
-#instructors #kretz:has(img:hover) {
-	background-color: #be5846;
+#kretz:has(img:hover) img {
+	--instructor-bg-color: #46bea0;
 }
 
-#instructors #hinkson:has(img:hover) {
-	background-color: #be46a2;
+#hinkson:has(img:hover) img {
+	--instructor-bg-color: #467ebe;
 }
 
-#instructors #challoner:has(img:hover) {
-	background-color: #46be6a;
+#challoner:has(img:hover) img {
+	--instructor-bg-color: #aa46be;
 }
 
-#instructors #spilman:has(img:hover) {
-	background-color: #466cbe;
+#spilman:has(img:hover) img {
+	--instructor-bg-color: #be4678;
 }
 
 
