@@ -33,6 +33,7 @@ body {
 	border-radius: 50%;
 	overflow: hidden;
 	transition: all 0.3s ease;
+	border: 0px solid #fff;
 }
 
 #instructors div img {
@@ -44,8 +45,8 @@ body {
 }
 
 #instructors div:has(img:hover) {
-	background-color: #46bea4;
 	cursor: pointer;
+	border: 8px solid #fff;
 }
 
 #instructors div img.hover {
@@ -53,3 +54,40 @@ body {
 	transform: scale(1.2) translate(0px, -10px);
 	cursor: pointer;
 }
+
+#instructors #appel:has(img:hover) {
+	background-color: #46bea4;
+}
+
+#instructors #wetzel:has(img:hover) {
+	background-color: #beac46;
+}
+
+#instructors #sumner:has(img:hover) {
+	background-color: #9c46be;
+}
+
+#instructors #foote:has(img:hover) {
+	background-color: #4692be;
+}
+
+#instructors #kretz:has(img:hover) {
+	background-color: #be5846;
+}
+
+#instructors #hinkson:has(img:hover) {
+	background-color: #be46a2;
+}
+
+#instructors #challoner:has(img:hover) {
+	background-color: #46be6a;
+}
+
+#instructors #spilman:has(img:hover) {
+	background-color: #466cbe;
+}
+
+
+
+
+
