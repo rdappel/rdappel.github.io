@@ -1,25 +1,48 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+	width: 100vw;
+}
+
+:root {
+	--instructor-bg-color: hsl(0, 48%, 51%);
+	--instructor-bg-hue: 0;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #cecece;
+	min-height: 100vh;
+	width: 100%;
 }
 
 #instructors {
 	display: grid;
 	padding: 50px;
-	margin-top: 10vh;
-	background-color: #818181;
-	min-height: 60vh;
+	margin: 0;
+	margin-top: 1px;
+	min-height: 50vh;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	grid-gap: 20px;
+	grid-gap: 50px;
 	justify-items: center;
 	align-items: center;
+	justify-content: center;
 }
 
 #instructors div {
-	margin: 20px;
 	padding: 0px;
 	border-radius: 5px;
 	width: 180px;
@@ -28,12 +51,12 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	justify-content: flex-end;
 	border-radius: 50%;
 	overflow: hidden;
 	transition: all 0.4s ease;
-	border: 1px solid #fff;
 	background: linear-gradient(to bottom, #8d8d8d, #444444);
+	border: 1px solid #fff;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #instructors div img {
@@ -43,8 +66,7 @@ body {
 	filter: grayscale(100%);
 	transition: all 0.4s ease;
 	/* define bg color variable */
-	--instructor-bg-color: #8d8d8d;
-	background: linear-gradient(to bottom, var(--instructor-bg-color), #000);
+	background: linear-gradient(to bottom, hsl(var(--instructor-bg-hue), 50%, 50%), 80%, black);
 }
 
 #instructors div:has(img:hover) {
@@ -58,39 +80,35 @@ body {
 	cursor: pointer;
 }
 
-#appel:has(img:hover) img {
-	--instructor-bg-color: #be4646;
+#instructor-info {
+	max-width: 80%;
+	min-width: 900px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background-color: hsl(var(--instructor-bg-hue), 50%, 30%);
+	transition: all 0.4s ease;
+	color: #fff;
+	min-height: 30vh;
+	border-radius: 16px;
+	border: 1px solid #fff;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-#wetzel:has(img:hover) img {
-	--instructor-bg-color: #be9446;
+#instructor-info h2 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+	color: #fff;
 }
 
-#sumner:has(img:hover) img {
-	--instructor-bg-color: #beb646;
+#instructor-info p {
+	font-size: 1.3rem;
+	line-height: 1.5;
+	margin-bottom: 10px;
+	max-width: 600px;
+	text-align: center;
+	color: #fff;
 }
-
-#foote:has(img:hover) img {
-	--instructor-bg-color: #7cbe46;
-}
-
-#kretz:has(img:hover) img {
-	--instructor-bg-color: #46bea0;
-}
-
-#hinkson:has(img:hover) img {
-	--instructor-bg-color: #467ebe;
-}
-
-#challoner:has(img:hover) img {
-	--instructor-bg-color: #aa46be;
-}
-
-#spilman:has(img:hover) img {
-	--instructor-bg-color: #be4678;
-}
-
-
-
-
 

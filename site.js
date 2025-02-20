@@ -12,7 +12,9 @@ const halfImageSize = {
 const instructorSection = document.querySelector('#instructors')
 const instructorDivs = instructorSection.querySelectorAll('.instructor')
 const instructorIds = [ ...instructorDivs ].map(e => e.id)
-console.log(instructorIds)
+
+const instructorNameDiv = document.querySelector('#info-name')
+const instructorDescriptionDiv = document.querySelector('#info-description')
 
 const instructorImages = instructorIds.reduce((acc, instructor) => {
 	const names = [ '0', '1', '2', '3', '4', '5', '6', '7', 'default' ]
@@ -49,6 +51,13 @@ instructorSection.addEventListener('mousemove', e => {
 			const image = images.default
 			img.src = image.src
 			img.classList.add('hover')
+
+			// get the data-attribute for color:
+			const { color, hue, name, description } = div.dataset
+			document.documentElement.style.setProperty('--instructor-bg-hue', hue)
+			instructorNameDiv.innerText = name
+			instructorDescriptionDiv.innerText = description
+
 			return
 		}
 
