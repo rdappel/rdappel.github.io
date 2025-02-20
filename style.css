@@ -42,9 +42,11 @@ body {
 
 #instructors div:has(img:hover) {
 	background-color: #46bea4;
+	cursor: pointer;
 }
 
 #instructors div img.hover {
 	filter: grayscale(0%);
 	transform: scale(1.2) translate(0px, -10px);
+	cursor: pointer;
 }
